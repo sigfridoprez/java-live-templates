@@ -21,8 +21,17 @@ Simple test method generation with imported `assertThat` from AssertJ.
 Abbreviation: __test__
 Template text:
 ```
+@org.junit.jupiter.api.DisplayName("$DESCRIPTION$")
 @org.junit.jupiter.api.Test
-void test$Function$() throws java.io.IOException {
+void test$Function$() {
+    // ? Given
+    org.mockito.BDDMockito.given($MOK$.$MOCKFUNCTION$(org.mockito.ArgumentMatchers.any())).willReturn("This is a message log");
+
+    // ? When
+    $INJECTMOCKS$.$INJECTMOCKSFUNCTION$("");
+
+    // ? Then
+    org.mockito.BDDMockito.then($$MOK$$).should(times(0)).$MOCKFUNCTION$(org.mockito.ArgumentMatchers.any());
     org.assertj.core.api.Assertions.assertThat("").isEqualTo("false");
 }
 ```
