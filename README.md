@@ -31,7 +31,7 @@ void test$Function$() {
     $INJECTMOCKS$.$INJECTMOCKSFUNCTION$("");
 
     // ? Then
-    org.mockito.BDDMockito.then($$MOK$$).should(times(0)).$MOCKFUNCTION$(org.mockito.ArgumentMatchers.any());
+    org.mockito.BDDMockito.then($MOK$).should(times(0)).$MOCKFUNCTION$(org.mockito.ArgumentMatchers.any());
     org.assertj.core.api.Assertions.assertThat("").isEqualTo("false");
 }
 ```
